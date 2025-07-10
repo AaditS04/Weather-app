@@ -1,1 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Weather Result</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+  <div class="container">
+    {% if error %}
+      <h2>{{ error }}</h2>
+    {% else %}
+      <h2>{{ city }}</h2>
+      <div class="weather-info">
+        <span class="emoji">{{ emoji }}</span>
+        <div>
+          <p>Temperature: {{ temp }}</p>
+          <p>Condition: {{ condition }}</p>
+        </div>
+      </div>
+    {% endif %}
+    <br/>
+    <a href="/" class="back-button">Search Again</a>
+  </div>
+</body>
+</html>
 
